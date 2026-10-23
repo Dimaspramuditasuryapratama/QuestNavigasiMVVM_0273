@@ -35,16 +35,12 @@ fun TampilData(
         Pair(stringResource(id = R.string.jenis_kelamin), "Lainnya"),
         Pair(stringResource(id = R.string.alamat), "Yogyakarta")
     )
+
     Scaffold(
         modifier = Modifier,
         topBar = {
             TopAppBar(
-                title = {
-                    Text(
-                        text = stringResource(id = R.string.tampil),
-                        color = Color.White
-                    )
-                },
+                title = { Text(text = stringResource(id = R.string.tampil), color = Color.White) },
                 colors = TopAppBarDefaults.mediumTopAppBarColors(
                     containerColor = colorResource(id = R.color.teal_700)
                 )
@@ -56,20 +52,12 @@ fun TampilData(
             verticalArrangement = Arrangement.SpaceBetween
         ) {
             Column(
-                modifier = Modifier.padding(
-                    dimensionResource(id = R.dimen.padding_medium)
-                ),
-                verticalArrangement = Arrangement.spacedBy(
-                    dimensionResource(id = R.dimen.padding_medium)
-                )
+                modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_medium)),
+                verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_medium))
             ) {
                 item.forEach { item ->
                     Column {
-                        Text(
-                            text = item.first.uppercase(),
-                            fontSize = 16.sp
-                        )
-
+                        Text(text = item.first.uppercase(), fontSize = 16.sp)
                         Text(
                             text = item.second,
                             fontWeight = FontWeight.Bold,
@@ -77,7 +65,9 @@ fun TampilData(
                             fontSize = 22.sp
                         )
                     }
+                    HorizontalDivider(thickness = 1.dp, color = Color.Cyan)
                 }
+                
             }
         }
     }
