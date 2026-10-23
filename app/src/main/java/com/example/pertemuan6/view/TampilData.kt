@@ -55,7 +55,30 @@ fun TampilData(
             modifier = Modifier.padding(isiRuang),
             verticalArrangement = Arrangement.SpaceBetween
         ) {
+            Column(
+                modifier = Modifier.padding(
+                    dimensionResource(id = R.dimen.padding_medium)
+                ),
+                verticalArrangement = Arrangement.spacedBy(
+                    dimensionResource(id = R.dimen.padding_medium)
+                )
+            ) {
+                item.forEach { item ->
+                    Column {
+                        Text(
+                            text = item.first.uppercase(),
+                            fontSize = 16.sp
+                        )
 
+                        Text(
+                            text = item.second,
+                            fontWeight = FontWeight.Bold,
+                            fontFamily = FontFamily.Cursive,
+                            fontSize = 22.sp
+                        )
+                    }
+                }
+            }
         }
     }
 }
