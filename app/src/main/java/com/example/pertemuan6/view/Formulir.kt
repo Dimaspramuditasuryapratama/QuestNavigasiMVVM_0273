@@ -32,16 +32,12 @@ fun FormIsian(
     jenisK: List<String> = listOf("Laki-Laki", "Perempuan"),
     onSubmitBtnClick: () -> Unit
 ) {
+
     Scaffold(
         modifier = Modifier,
         topBar = {
             TopAppBar(
-                title = {
-                    Text(
-                        stringResource(id = R.string.home),
-                        color = Color.White
-                    )
-                },
+                title = { Text(stringResource(id = R.string.home), color = Color.White) },
                 colors = TopAppBarDefaults.mediumTopAppBarColors(
                     containerColor = colorResource(id = R.color.teal_700)
                 )
@@ -60,9 +56,7 @@ fun FormIsian(
                 modifier = Modifier
                     .padding(top = 20.dp)
                     .width(250.dp),
-                label = {
-                    Text(text = "Nama lengkap")
-                }
+                label = { Text(text = "Nama lengkap") }
             )
             HorizontalDivider(
                 modifier = Modifier
@@ -71,15 +65,12 @@ fun FormIsian(
                 thickness = 1.dp,
                 color = Color.Red
             )
-
             Row {
                 jenisK.forEach { item ->
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
                         RadioButton(
-                            selected = false,
-                            onClick = { }
+                            selected = (false),
+                            onClick = {  }
                         )
                         Text(text = item)
                     }
@@ -92,16 +83,22 @@ fun FormIsian(
                 thickness = 1.dp,
                 color = Color.Red
             )
-
             OutlinedTextField(
                 value = "",
-                onValueChange = { },
+                onValueChange = {  },
                 singleLine = true,
                 modifier = Modifier.width(250.dp),
-                label = {
-                    Text(text = "Alamat")
-                }
+                label = { Text(text = "Alamat") }
             )
+            Spacer(modifier = Modifier.height(20.dp))
+            Button(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(all = 25.dp),
+                onClick = onSubmitBtnClick
+            ) {
+                Text(stringResource(id = R.string.Submit))
+            }
         }
     }
 }
