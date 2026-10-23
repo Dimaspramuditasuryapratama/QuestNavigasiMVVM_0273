@@ -30,4 +30,9 @@ import com.example.pertemuan6.R
 fun TampilData(
     onBackBtnClick: () -> Unit
 ) {
+    val item = listOf(
+        Pair(stringResource(id = R.string.nama_lengkap), "Contoh Nama"),
+        Pair(stringResource(id = R.string.jenis_kelamin), "Lainnya"),
+        Pair(stringResource(id = R.string.alamat), "Yogyakarta")
+    )
 }
